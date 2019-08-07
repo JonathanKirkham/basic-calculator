@@ -10,21 +10,17 @@ def main():
         return a * b
 
     def divide(a, b):
-        try:
-            return a / 0
-        except ZeroDivisionError as err2:
-            return err2
-
-    global op
-    global num1
-    global num2
+        if a == 0:
+            print("ERROR: Zero Division Error!")
+        elif b == 0:
+            print("ERROR: Zero Division Error!")
+        else:
+            return a / b
 
     try:
         num1 = float(input("Number: "))
         op = input("[+ - * /]: ")
         num2 = float(input("Number: "))
-    except ZeroDivisionError as err:
-        print(err)
     except ValueError as err1:
         print(err1)
         print("Please try again")
@@ -59,6 +55,3 @@ def main():
 
 
 main()
-
-
-
